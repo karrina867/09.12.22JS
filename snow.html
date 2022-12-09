@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Попросить у пользавателя строку символов.Заголовки с 1 по 6 с введённым текстом. Цвет - синий.
+        */
+       /*
+       let body1 = document.querySelector('body');
+       for(let i=1;i<=6;i++){
+         let first = prompt(`введите текст в ${i} заголовок: `);
+         body1.innerHTML = body1.innerHTML + `<h${i}> ${first} </h${i}>`;
+         body1.style.color = 'blue';
+       }
+       */
+       /*2. Спросить у пользователя: какой элемент создать, какой текст
+поместить внутрь и какой цвет текста. Программа должна
+создать на странице указанный элемент.
+*/
+       /*
+       let second = prompt('какой создать элемент:');
+       let second1 =  prompt('какой ввести текст:');
+       let second2 =  prompt('какой цвет текста:');
+       let body1 = document.querySelector('body');
+       body1.innerHTML = `<${second}> ${second1}</${second}>`;
+       body1.style.color = `${second2}`;
+       */
+      /*3. Создать на экране аналог панели графического редактора 20
+блоков случайного цвета (на повторы проверять не надо).
+Верстаем вручную, задача JS – только задать нужные цвета
+фона.*/
+/*
+        let body1 = document.querySelector('body'); 
+        for(let i=0; i<20; i++){
+            let el4 = document.createElement('div');
+            body1.append(el4);
+            el4.style.width = '30px';
+            el4.style.height = '30px';
+            el4.style.backgroundColor = `rgb( ${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+        }
+        */
+        /*4. С интервалом в 1 сек. на экране должны появиться шарики с
+номерами от 1 до 5.*/
+
+        let body1 = document.querySelector('body'); 
+        setInterval(userSlider,1000);
+        let n = 0;
+        function userSlider(){
+            let el4 = document.createElement('div');
+            body1.append(el4);
+            el4.style.backgroundColor ='blue';
+            el4.textContent = `${n++}`;
+            }
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        border: 1px solid black;
+    }
+    img{
+        height: 150px;
+        width: 200px;
+    }
+    .container{
+        width: 200px;
+        height: 150px;
+        box-shadow: 10px 10px 10px grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <h1>контент</h1>
+    <h2>привет, </h2>
+    <img src="img1.jpg" alt="#">
+
+    <script>
+        let el = document.querySelector('h1');
+        //добавление объекта,удаляет уже существующий
+        let classEl = 'text';
+        el.innerHTML = `<span class="${classEl}">привет</span>`;//кавычки должны отличаться
+       
+        let classEl1 = 'text';
+        el.innerHTML = el.innerHTML +`<span class="${classEl1}">привет</span>`;//кавычки должны отличаться
+       
+       /* el.textContent = 'контент';
+        el.innerText = 'контент';*/
+        //
+        let img = document.querySelector('img');
+       
+        setTimeout(function(){
+             img.scr = 'img3.jpg';
+        },2000);
+
+        let mas =['img1.jpg','img2.jpg','img3.jpg'];
+        let count = 0;
+        setInterval(userSlider,1500);
+        function userSlider(){
+            if(count == mas.length - 1){
+                count = -1;
+            }
+            img.scr = mas[++count];
+        }
+        //
+        let el3 = document.querySelector('h2');
+        let name = prompt('ваше имя');
+        el3.innerHTML = el3.innerHTML + name;
+
+        //2 способ
+        let body34 = document.querySelector('body');
+        let el4 = document.createElement('div');
+
+        el4.textContent = 'текст';
+        el4.classList.add('container');
+        // el4.id ='';
+        //обращаемся куда мы добавляем элемент, вставляет элемент в конец
+        el4.style.backgroundColor = 'green';
+        body34.append(el4);//вовнутрь конца елемента
+        //  document.body.append(el4); //можно так только с body
+        
+        //2.1 способ
+        body34.prepend(el4);
+
+        img.before(el4);
+        img.after(el4);// после этого элемента
+        img.replaceWith(el4);//добавляет вместо чего то
+        //
+        let mas2 =['Лиза', 'Дима'];
+        for(let i =1; i< mas2.length;i++){
+            let el6 =document.querySelector('body');
+            el6 = innerHTML(`<ul><li><li/></ul>`);
+        }
+    </script>
+</body>
+</html>
